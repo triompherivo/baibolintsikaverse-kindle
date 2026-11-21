@@ -1,0 +1,25 @@
+#plan90-panel, #personal-daily-panel, #personal-teny-panel { padding-block: 10px; }
+.plan-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+.plan-head h2 { margin: 0 8px 0 0; }
+.plan-head label { display: flex; align-items: center; gap: 6px; }
+#plan90-progress { width: 100%; height: 12px; accent-color: var(--accent); }
+#plan90-summary { font-weight: 650; }
+#plan90-card, .personal-reading-card { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--card, var(--surface)); margin: 16px 0; }
+#plan90-verses details { border-top: 1px solid var(--line); padding: 9px 0; }
+#plan90-verses summary { cursor: pointer; font-weight: 650; padding: 5px 0; }
+#plan90-verses p { font-family: Georgia, serif; line-height: 1.58; margin: 9px 0; white-space: pre-wrap; }
+#plan90-verses sup { color: var(--accent); font-size: 12px; margin-inline-end: 6px; }
+#plan90-verses p[dir="rtl"] { line-height: 1.85; }
+.plan-dialog { color: var(--ink, var(--foreground)); background: var(--card, var(--surface)); border: 1px solid var(--line); border-radius: 14px; width: min(600px, calc(100% - 24px)); max-height: 85vh; }
+.plan-dialog::backdrop { background: #0007; }
+.plan-dialog header { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.plan-dialog header h3 { margin: 0; }
+.plan-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+.plan-grid button { min-width: 0; padding-inline: 3px; }
+.plan-grid button[data-state="done"] { border-color: var(--accent); font-weight: 650; }
+.plan-grid button[data-state="missed"] { text-decoration: underline dotted; }
+#plan90-dialog-error:empty, #plan90-status:empty { display: none; }
+#plan90-dialog-error { color: var(--vscode-errorForeground, #c05150); }
+.personal-reading-card blockquote { margin: 12px 0; font: 400 21px/1.45 Georgia, serif; white-space: pre-wrap; }
+.personal-reading-card audio { width: 100%; }
+.personal-reading-results { display: flex; flex-wrap: wrap; gap: 6px; }

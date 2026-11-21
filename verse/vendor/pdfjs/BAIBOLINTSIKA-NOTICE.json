@@ -1,0 +1,18 @@
+{
+  "upstream": "https://github.com/mozilla/pdf.js/releases/tag/v4.10.38",
+  "tag": "v4.10.38",
+  "commit": "f9bea397f",
+  "asset": "pdfjs-4.10.38-dist.zip",
+  "sha256": "32bdd9c5198b77dbaa8f02de81f34476888b3abdd64b9fb5f607f81f01487e6a",
+  "license": "Apache-2.0; LICENSE included",
+  "changes": [
+    "viewer.html loads separate original Baibolintsika integration scripts and stylesheet.",
+    "Source maps, debugger, example PDF and unused scripting sandbox omitted.",
+    "The viewer module is loaded by definition-pdf.js after stylesheets are ready for WebKit.",
+    "Chrome only: worker imports use package-relative literals; removed the CDN worker wrapper, PDF scripting loader, debugger loader and optional PostScript-to-JavaScript compilation."
+  ],
+  "runtime": "No PDF scripting, remote code, telemetry or model downloads. Files stay local.",
+  "kindleChanges": [
+    "Modules transpiled for Chromium 75 and loaded with Promise compatibility."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "source": "Baibolintsika/Baibolintsika/hiraffpm.json",
+  "androidComparison": "app/src/main/assets/hymn/hiraffpm.json",
+  "inputSHA256": {
+    "swift": "34715447729a1b57b6ec6d129da7d741f55e58d7c49cfe94033e805d0d8a9e62",
+    "android": "bcd7d17a920aa8b7688cf0a7689fdf229afca2e62f0a781b739edd201897466c"
+  },
+  "outputSHA256": "de960901ffc51724461a4e30a38c523f286a0171e185fa14903e46a0f8695525",
+  "records": 920,
+  "collections": {
+    "FFPM": 828,
+    "Antema": 24,
+    "Tsanta": 14,
+    "FF": 54
+  },
+  "fields": [
+    "id",
+    "number",
+    "title",
+    "text"
+  ],
+  "wordingUnchanged": true
+}

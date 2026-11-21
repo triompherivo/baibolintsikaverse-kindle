@@ -1,0 +1,43 @@
+/* CCDB is loaded only by its own reader and uses a dedicated worker. */
+.library-tabs:has(#kjpbs-tab){display:flex;flex-wrap:wrap;gap:4px;width:100%}
+.library-tabs:has(#kjpbs-tab) button{flex:1 1 95px;grid-column:auto;padding:10px 7px}
+body:has(#kjpbs-tab[aria-selected=true]) main{max-width:1120px}
+#kjpbs-panel,.kj-dialog{--kj-ink:#283657;--kj-accent:#405ac0;--kj-soft:#edf0ff;--kj-line:#d9def2;--kj-card:#ffffffd9;--kj-muted:#66708c;--kj-red:#b3273e;color:var(--kj-ink)}
+.kj-hero{padding:25px;border:1px solid var(--kj-line);border-radius:20px;background:linear-gradient(125deg,#e5edffdb,#f7edffb8 70%,#fff8e9);margin-bottom:17px}
+.kj-hero h2{font:500 30px/1.2 Georgia,serif;letter-spacing:-.6px;margin:9px 0}
+.kj-hero>p:last-child{font-size:12px;line-height:1.7;margin-bottom:0;color:var(--kj-muted)}
+.kj-hero .eyebrow{color:var(--kj-accent);font-weight:700;letter-spacing:1.3px}
+.kj-toolbar,.kj-options,.kj-actions,.kj-display,.kj-pagination{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:12px 0}
+#kjpbs-panel button,.kj-dialog button{color:var(--kj-ink);border-color:var(--kj-line);background:var(--kj-card)}
+#kjpbs-panel button:hover,.kj-dialog button:hover{background:var(--kj-soft)}
+#kjpbs-panel .primary{background:var(--kj-accent);color:white;border-color:var(--kj-accent)}
+#kjpbs-panel .primary:hover{background:#344cb0;color:white;border-color:#344cb0}
+#kjpbs-panel select,.kj-phrase{border:1px solid var(--kj-line);background:var(--kj-card);color:var(--kj-ink);max-width:100%}
+#kjpbs-panel input[type=checkbox]{accent-color:var(--kj-accent)}
+.kj-criteria{display:grid;gap:10px;margin:16px 0}
+.kj-criterion{padding:13px;border:1px solid var(--kj-line);border-radius:13px;background:var(--kj-card)}
+.kj-criterion[data-disabled=true]{opacity:.65}.kj-criterion[data-excluded=true]{border-left:3px solid var(--kj-red)}
+.kj-phrase-line{display:flex;gap:8px;align-items:center}.kj-phrase{min-width:0;width:100%;padding:10px;border-radius:8px;font-size:15px}
+.kj-criterion-number{color:var(--kj-accent);font-weight:700;font-variant-numeric:tabular-nums;min-width:18px}.kj-remove{padding:8px 10px!important}
+.kj-criterion-options{display:flex;flex-wrap:wrap;gap:9px;margin-top:11px;align-items:center}.kj-criterion-options label{font-size:11px;white-space:nowrap}.kj-criterion-options select{font-size:11px;padding:5px;max-width:155px}
+.kj-criterion-stats{display:flex;flex-wrap:wrap;gap:11px;margin:9px 0 0;font-size:11px;color:var(--kj-muted)}
+.kj-within{border:1px solid var(--kj-line);background:var(--kj-card);border-radius:13px;padding:12px 14px;margin:12px 0}
+.kj-within>summary{font-size:12px;cursor:pointer;color:var(--kj-accent);font-weight:650}.kj-book-tools{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}.kj-book-tools select{min-width:0;flex:1;font-size:12px}
+.kj-books{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:7px;max-height:290px;overflow:auto;padding:6px 2px}.kj-books label{display:flex;gap:7px;align-items:center;font-weight:400;font-size:12px;padding:5px}
+.kj-options>label{font-size:12px}.kj-options .kj-scope{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:650}.kj-scope select{font-size:12px}
+.kj-caption{font-size:11px;line-height:1.65;color:var(--kj-muted)}.kj-help{margin:12px 0;font-size:12px;line-height:1.7;color:var(--kj-muted)}.kj-help summary{cursor:pointer;color:var(--kj-accent)}.kj-help code{color:var(--kj-ink)}
+#kjpbs-status{font-size:12px;line-height:1.7;min-height:20px;margin:12px 0;color:var(--kj-accent)}#kjpbs-status.error{color:var(--kj-red)}
+.kj-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:15px 0}
+.kj-stat{border:1px solid var(--kj-line);border-radius:12px;background:var(--kj-card);padding:13px 10px}.kj-stat strong{display:block;font:600 24px/1.2 Georgia,serif;color:var(--kj-accent);font-variant-numeric:tabular-nums}.kj-stat small{font-size:10px;color:var(--kj-muted);margin-top:4px}
+.kj-seven{color:var(--kj-red)!important;font-weight:700!important}.kj-stat strong.kj-seven{color:var(--kj-red)}
+.kj-display{padding:13px;border:1px solid var(--kj-line);border-radius:12px;background:var(--kj-card);align-items:flex-end}.kj-display>label{display:flex;gap:5px;flex-direction:column;font-size:11px}.kj-display label.kj-check{display:block;margin-bottom:9px}.kj-display select{font-size:12px;padding:7px;max-width:210px}
+.kj-result-count{font-size:12px;color:var(--kj-muted);margin:17px 0 12px}.kj-results{min-height:20px}.kj-row{display:block;width:100%;text-align:left;margin:7px 0;padding:14px!important;font-weight:400;border-radius:12px}.kj-row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;margin-bottom:8px}.kj-row-head strong{color:var(--kj-accent)}.kj-row-count{font-variant-numeric:tabular-nums;font-size:11px}
+.kj-text{font:var(--kj-text-size,17px)/1.85 Georgia,serif;overflow-wrap:anywhere;margin:0;color:var(--kj-ink)}.kj-row[data-excluded=true] .kj-text{text-decoration:line-through;text-decoration-color:var(--kj-red)}
+.kj-text mark{color:#263656;background:#f3da8e;border-radius:3px;padding:0 .05em;box-decoration-break:clone;-webkit-box-decoration-break:clone}.kj-text .kj-mark-1{background:#cce6ff}.kj-text .kj-mark-2{background:#e6d4fa}.kj-text .kj-mark-3{background:#ffd5cf}.kj-text .kj-mark-4{background:#dce2fd}.kj-text .kj-mark-5{background:#f7e8a9}
+.kj-text .kj-translatorAdded{font-style:italic}.kj-text .kj-wordsOfJesus{color:#9b243e}.kj-text .kj-divineName{font-variant:small-caps}.kj-mention{font:600 9px/1 system-ui;vertical-align:super;color:var(--kj-accent);margin:0 3px 0 1px;text-decoration:none}
+.kj-tree{margin:9px 0;border:1px solid var(--kj-line);border-radius:12px;background:var(--kj-card);padding:0 12px}.kj-tree>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;padding:13px 0;font-size:13px;font-weight:600;list-style:none}.kj-tree>summary:before{content:'▸';color:var(--kj-accent)}.kj-tree[open]>summary:before{content:'▾'}.kj-tree-title{flex:1}.kj-tree-count{font-size:10px;font-weight:400;text-align:right;line-height:1.7}.kj-tree .kj-tree{background:transparent;margin:7px 0}.kj-tree .kj-row{background:transparent!important}.kj-pagination{justify-content:space-between;font-size:11px;color:var(--kj-muted)}
+.kj-results-empty{padding:24px 16px;border:1px dashed var(--kj-line);border-radius:12px;font-size:13px;line-height:1.8;color:var(--kj-muted)}
+.kj-dialog{width:min(840px,calc(100vw - 28px));max-height:88vh;padding:0;border:1px solid var(--kj-line);border-radius:18px;background:var(--card);box-shadow:0 20px 90px #0005}.kj-dialog::backdrop{background:#121a345c;backdrop-filter:blur(4px)}.kj-dialog-scroll{max-height:85vh;overflow:auto;padding:24px}.kj-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.kj-dialog-head h3{font:500 27px Georgia,serif;margin:6px 0}.kj-dialog article{padding:18px;margin:14px 0;background:var(--kj-card);border-color:var(--kj-line)}.kj-ranks{font-size:12px;line-height:1.9;color:var(--kj-muted)}.kj-ranks li{margin:8px 0}.kj-context-row{padding:9px 0;border-bottom:1px solid var(--kj-line)}.kj-context-row .kj-ref{display:block;color:var(--kj-accent);font:600 11px system-ui;margin-bottom:4px}
+@media(max-width:620px){.library-tabs:has(#kjpbs-tab) button{flex-basis:85px;font-size:11px}.kj-hero{padding:20px}.kj-hero h2{font-size:27px}.kj-criterion{padding:10px}.kj-stats{gap:6px}.kj-stat{padding:12px 7px}.kj-stat strong{font-size:22px}.kj-display{gap:10px}.kj-display>label{flex:1}.kj-dialog-scroll{padding:18px}.kj-tree{padding-inline:9px}.kj-row{padding:11px!important}}
+@media(prefers-color-scheme:dark){#kjpbs-panel,.kj-dialog{--kj-ink:#e0e5fc;--kj-accent:#b5c6ff;--kj-soft:#2c3551;--kj-line:#444c6b;--kj-card:#242c42d9;--kj-muted:#abb5d3;--kj-red:#ff879e}.kj-hero{background:linear-gradient(125deg,#243451db,#392a4db8 70%,#363024)}#kjpbs-panel .primary{background:#536ac7;color:#fff}.kj-text .kj-wordsOfJesus{color:#ffafb5}.kj-text mark{color:#1f2d4e}}
+@media(forced-colors:active){.kj-text mark{background:Highlight;color:HighlightText}.kj-seven{color:LinkText!important}}

@@ -1,0 +1,45 @@
+.navbar, .form-horizontal, .page-header, .page-header + p, footer, .lead, body:after, .google-auto-placed, .media, .adsbygoogle {
+  display: none !important;
+}
+
+body, .container, .popover{
+  background: var(--v-ground-base) !important;
+  color: var(--v-text-base) !important;
+}
+
+a {
+   color: var(--v-anchor-base) !important;
+}
+
+.verb-search-result, .vf-search-result, tr, th, td {
+  border-color: rgba(var(--text-rgb), 0.12) !important;
+}
+
+.btn, .form-control, .pagination>li>a, .dropdown-menu  {
+  background: var(--v-secondary-base) !important;
+  color: var(--v-text-base) !important;
+  border-color: rgba(var(--text-rgb), 0.12) !important;
+}
+
+.btn-primary, .pagination>.active>a,  .dropdown-menu>.active>a {
+  background: var(--v-primary-base) !important;
+  color: var(--v-contrast-base) !important;
+  border-color: var(--v-primary-base) !important;
+}
+
+.highlight {
+  background: var(--v-secondary-base) !important;
+  color: var(--v-text-base) !important;
+}
+
+.table-hover>tbody>tr:hover, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+  background-color: rgba(var(--text-rgb), 0.05) !important;
+}
+
+.transcription b {
+  color: var(--v-ptext-base) !important;
+}
+
+.page-header + p + .results-by-verb {
+  margin-top: 0 !important;
+}

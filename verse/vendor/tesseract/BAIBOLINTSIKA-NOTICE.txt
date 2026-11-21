@@ -1,0 +1,4 @@
+Chrome OCR uses Tesseract.js 7.0.0 and tesseract.js-core 7.0.0 under Apache-2.0.
+Sources: https://github.com/naptha/tesseract.js and https://github.com/naptha/tesseract.js-core
+The build emits readable JavaScript, loads only packaged workers and WASM, and restricts
+automatic language loading to the three packaged English, French and Hebrew models.

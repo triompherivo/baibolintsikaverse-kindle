@@ -1,0 +1,11 @@
+BaibolintsikaVerse — recherche KJV CCDB
+
+Source de référence : King James Pure Bible Search, Donna Whisnant / Dewtronics, https://www.purebiblesearch.com/ . Sources officielles 3.0 : https://github.com/dewhisna/KingJamesPureBibleSearch/tree/v3.0 .
+
+La recherche JavaScript adapte le comportement du moteur local KJPBSRust (GPL-3.0-only), repris dans Baibolintsika Rust/Tauri, et utilise les corpus CCDB existants. Licence du moteur : GNU General Public License version 3, copie ci-jointe. Les autres modules personnels ne font pas partie de ce portage.
+
+Base utilisée : King James Bible (1769), UUID 85D8A6B0-E670-11E2-A28F-0800200C9A66, source bbl-kjv1769.ccdb. Le texte, l'ordre des 790849 mots et les index NormalMap sont conservés. L'export reproductible et les empreintes figurent dans Tools/VerseBrowserPorts/export_kjpbs.py et kjv1769.json. Les métadonnées originales du corpus sont conservées dans info.informationHTML.
+
+La version 8.0.0 ajoute cette recherche CCDB dans les extensions Firefox et Chrome. Aucun service distant ne reçoit les recherches ou fichiers KJS de l'utilisateur.
+
+Les documents JSON sont répartis en quatre ressources inférieures à 5 Mo pour le validateur Mozilla. Le worker les réunit dans leur ordre initial avant de construire le moteur ; le corpus reconstitué est identique à celui validé sur macOS.

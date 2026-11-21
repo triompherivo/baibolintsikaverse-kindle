@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BaibolintsikaVerse</title><script src="reader-layout.js"></script><link rel="stylesheet" href="reader.css"><script src="compat.js"></script><script src="browser-web.js" defer></script><script src="books.js" defer></script><script src="core.js" defer></script><script src="definition-background.js" defer></script><script src="background.js" defer></script><script src="settings.js" defer></script><script src="reader.js" defer></script><script src="hymns-core.js" defer></script><script src="library.js" defer></script><script src="hymns.js" defer></script><script src="calendars-core.js" defer></script><script src="calendars.js" defer></script><link rel="stylesheet" href="hymns.css"><link rel="stylesheet" href="calendars.css"><link rel="stylesheet" href="interlinear.css"><script src="interlinear-core.js" defer></script><script src="interlinear.js" defer></script><link rel="stylesheet" href="kjpbs.css"><script src="kjpbs-kjs.js" defer></script><script src="kjpbs.js" defer></script><link rel="stylesheet" href="definition.css"><script src="vendor/liquid.browser.umd.js" defer></script><script src="definition-core.js" defer></script><script src="definition-automation.js" defer></script><script src="definition.js" defer></script><link rel="stylesheet" href="definition-study.css"><link rel="stylesheet" href="definition-reader.css"><script src="definition-study.js" defer></script><script src="definition-ocr.js" defer></script><script src="definition-book-store.js" defer></script><script src="definition-download.js" defer></script><script src="definition-reader.js" defer></script><script src="definition-dictionary.js" defer></script><link rel="stylesheet" href="reading/plan.css"><script src="reading/host.js" defer></script><script src="reading/plan-core.js" defer></script><script src="reading/daily-teny.js" defer></script><script src="reading/plan.js" defer></script><link rel="stylesheet" href="eink.css"><script src="host-ui.js" defer></script></head>
+<body>
+  <div id="reader-scroll" class="reader-scroll" tabindex="0" role="region" aria-label="Bibliothèque BaibolintsikaVerse">
+  <header class="brand kindle-header"><div><h1>BaibolintsikaVerse</h1></div><a id="scriptures-link" href="../bible.html" hidden>Scriptures</a></header>
+  <main>
+    <nav id="library-tabs" class="library-tabs" role="tablist" aria-label="Bibliothèque">
+      <button id="bible-tab" type="button" role="tab" aria-selected="true" aria-controls="bible-panel">Lecture biblique</button>
+      <button id="reading-daily-tab" type="button" role="tab" aria-selected="false" aria-controls="reading-daily-panel" tabindex="-1">Parole du jour</button>
+      <button id="hymns-tab" type="button" role="tab" aria-selected="false" aria-controls="hymns-panel" tabindex="-1">Hymnes FFPM</button>
+      <button id="kjpbs-tab" type="button" role="tab" aria-selected="false" aria-controls="kjpbs-panel" tabindex="-1">KJV · CCDB</button>
+      <button id="interlinear-tab" type="button" role="tab" aria-selected="false" aria-controls="interlinear-panel" tabindex="-1">Interlinéaire</button>
+      <button id="pericope-tab" type="button" role="tab" aria-selected="false" aria-controls="pericope-panel" tabindex="-1">Péricope</button>
+      <button id="dss-tab" type="button" role="tab" aria-selected="false" aria-controls="dss-panel" tabindex="-1">Calendrier DSS</button>
+      <button id="definition-tab" type="button" role="tab" aria-selected="false" aria-controls="definition-panel" tabindex="-1">Définition</button>
+          <button id="reading-teny-tab" type="button" role="tab" aria-selected="false" aria-controls="reading-teny-panel" tabindex="-1">Teny Fiainana</button>
+      <button id="plan90-tab" type="button" role="tab" aria-selected="false" aria-controls="plan90-panel" tabindex="-1">Bible en 90 jours</button>
+    </nav>
+    <details class="kindle-tools"><summary>Étudier un texte</summary><label for="kindle-text">Collez un extrait ou sélectionnez du texte dans le lecteur.</label><textarea id="kindle-text" rows="3" maxlength="30000"></textarea><div><button id="kindle-references" type="button">Repérer les références</button> <button id="kindle-definition" type="button">Définir</button></div><div id="kindle-matches" aria-live="polite"></div></details><p id="storage-notice" class="numbering" role="status" aria-live="polite" hidden></p>
+    <section id="bible-panel" role="tabpanel" aria-labelledby="bible-tab">
+    <form id="entry"><label for="query">Une référence, un mot, une découverte</label><div class="entry-row"><input id="query" type="search" placeholder="Jaona 3:16 · John 3:16 · fitiavana" maxlength="240" autocomplete="off" required><button type="submit" class="primary">Lire / chercher</button></div><small>Références FR · MG · EN. Recherche : AND / &amp;&amp;, OR / ||, XOR / ^, NOT / !, parenthèses, * et ?, ou "expression exacte".</small><details class="search-help"><summary>Exemples et règles de recherche</summary><p><code>jesosy AND petera</code> : les deux mots. <code>jesosy OR petera</code> : au moins un. <code>jesosy XOR petera</code> : un seul des deux. <code>jesosy AND NOT petera</code> : le premier sans le second.</p><p>Parenthèses pour regrouper : <code>(jesosy OR petera) AND NOT paoly</code>. Priorité : NOT, AND, XOR, OR. Sans opérateur, les mots sont reliés par AND. Placez un mot comme <code>"and"</code> entre guillemets pour le chercher littéralement.</p></details></form>
+    <div class="settings"><label>Bible <select id="version"><option value="1MG1865">1MG1865 · Malagasy</option><option value="KJV">KJV · English</option><option value="KJF">KJF · Français</option></select></label><input id="enabled" type="checkbox" hidden></div>
+    <nav class="navigation" aria-label="Navigation biblique"><select id="book" aria-label="Livre"></select><select id="chapter" aria-label="Chapitre"></select><button id="previous" aria-label="Chapitre précédent">←</button><button id="next" aria-label="Chapitre suivant">→</button></nav>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="chapter-options" class="chapter-options" hidden>
+  <button id="chapter-parallel" type="button" aria-pressed="false">Parallèle : inactif</button>
+  <select id="chapter-edition" aria-label="Traduction parallèle" hidden></select>
+  <div class="chapter-size" role="group" aria-label="Taille du texte">
+    <button id="chapter-smaller" type="button" aria-label="Réduire le texte">A−</button>
+    <output id="chapter-size"></output>
+    <button id="chapter-larger" type="button" aria-label="Agrandir le texte">A+</button>
+    <button id="chapter-auto" type="button">Auto</button>
+  </div>
+</div>
+    <section id="reading"><div class="reading-header"><div><p class="eyebrow" id="edition">BAIBOLY MALAGASY 1865</p><h2 id="reference"></h2></div><button id="open" title="Ouvrir en mode lecture">Fenêtre de lecture ↗</button></div><div class="reading-tools"><button id="copy">Copier le passage</button><label><input id="crossrefs" type="checkbox"> Renvois TSK (KJV)</label></div><p class="numbering" id="numbering" hidden>Les renvois TSK ouvrent la KJV ; la numérotation peut différer dans la 1MG1865.</p><div id="chapter-headings" class="chapter-headings" hidden></div><article id="verses"></article></section>
+    <section id="search-results" hidden><div class="reading-header"><h2 id="result-title">Recherche</h2><button id="back">← Lecture</button></div><div id="frequencies" aria-label="Versets trouvés par livre"></div><div class="result-filter"><label>Résultats dans <select id="filter"><option value="0">Tous les livres</option></select></label></div><div id="hits"></div><div class="pagination"><button id="prev-results">← Précédents</button><span id="page-count"></span><button id="next-results">Suivants →</button></div></section>
+    </section>
+    <section id="kjpbs-panel" role="tabpanel" aria-labelledby="kjpbs-tab" hidden>
+      <div class="kj-hero"><p class="eyebrow">KING JAMES PURE BIBLE SEARCH · CCDB</p><h2>Chaque mot compte.</h2><p>La KJV 1769, ses expressions et leurs occurrences exactes.<br>Plusieurs phrases, tous les livres, une recherche locale.</p></div>
+      <div class="kj-toolbar"><button id="kjpbs-import" type="button">Importer .kjs</button><input id="kjpbs-file" type="file" accept=".kjs" hidden><button id="kjpbs-export" type="button" disabled>Exporter .kjs</button><button id="kjpbs-open" type="button">Ouvrir dans le lecteur</button><button id="kjpbs-reset" type="button">Nouvelle recherche</button></div>
+      <p id="kjpbs-corpus" class="kj-caption">King James Bible (1769) · Base CCDB</p>
+      <form id="kjpbs-form">
+        <div id="kjpbs-criteria" class="kj-criteria"></div>
+        <div class="kj-actions"><button id="kjpbs-add" type="button">＋ Add phrase</button><button id="kjpbs-search" type="submit" class="primary">Chercher</button><button id="kjpbs-cancel" type="button" hidden>Annuler</button></div>
+        <div class="kj-options"><label class="kj-scope">Search scope <select id="kjpbs-scope"><option value="unscoped">Sans portée (OU)</option><option value="wholeBible">Ensemble dans la sélection</option><option value="testament">Même testament</option><option value="category">Même catégorie</option><option value="book">Même livre</option><option value="chapter">Même chapitre</option><option value="verse">Même verset</option></select></label></div>
+        <details class="kj-within"><summary>Search Within · <span id="kjpbs-book-count">Tous les livres</span></summary><div class="kj-book-tools"><button id="kjpbs-all" type="button">Tous</button><button id="kjpbs-none" type="button">Aucun</button><select id="kjpbs-book-preset" aria-label="Groupe de livres"><option value="">Choisir un groupe…</option></select></div><div id="kjpbs-books" class="kj-books"></div></details>
+        <div class="kj-options"><label><input id="kjpbs-superscriptions" type="checkbox" checked> Superscriptions</label><label><input id="kjpbs-colophons" type="checkbox" checked> Colophons</label><label><input id="kjpbs-hyphen" type="checkbox"> Traits d’union significatifs</label></div>
+      </form>
+      <details class="kj-help"><summary>Expressions, portées et numérotation</summary><p>Chaque ligne est une expression exacte : <code>in the beginning</code>. Utilisez <code>*</code> pour plusieurs caractères, <code>?</code> pour un caractère et <code>God | LORD</code> pour les alternatives. « Case » distingue les majuscules, « Accent » les accents. Une contrainte empêche une phrase de traverser un verset, un chapitre ou un livre.</p><p>Sans portée, les phrases sont réunies (OU). Les autres portées exigent leur présence dans la même unité. Une phrase exclue retire les occurrences incluses qu’elle contient, selon les règles de CCDB. Les titres et colophons des livres sélectionnés peuvent être inclus séparément. « Aucun » exclut tous les livres.</p><p>Les exposants numérotent les occurrences d’une phrase dans toute la Bible, la sélection ou les résultats. Les nombres positifs multiples de 7 sont rouges. Les trois présentations conservent les mêmes résultats.</p><p>Référence : <a href="https://www.purebiblesearch.com/" target="_blank" rel="noopener">King James Pure Bible Search</a>. <a href="data/kjpbs/NOTICE.txt" target="_blank" rel="noopener">Provenance et licence</a>.</p></details>
+      <p id="kjpbs-status" role="status" aria-live="polite">La base se charge à l’ouverture de cet onglet.</p>
+      <div id="kjpbs-output" hidden>
+        <div id="kjpbs-stats" class="kj-stats" aria-label="Statistiques exactes de la recherche"></div>
+        <div class="kj-display"><label>Résultats<select id="kjpbs-result-mode"><option value="included">Occurrences retenues</option><option value="excluded">Occurrences exclues</option></select></label><label>Présentation<select id="kjpbs-layout"><option value="list">Liste</option><option value="bookTree">Arbre par livre</option><option value="bookChapterTree" selected>Arbre livre / chapitre</option></select></label><label class="kj-check"><input id="kjpbs-preview" type="checkbox" checked> Texte</label><label class="kj-check"><input id="kjpbs-highlights" type="checkbox" checked> Surlignage</label><label class="kj-check"><input id="kjpbs-mentions" type="checkbox" checked> Exposants</label><label>Numérotation<select id="kjpbs-numbering"><option value="results">Dans les résultats</option><option value="selection">Dans la sélection</option><option value="wholeBible">Dans toute la Bible</option></select></label><button id="kjpbs-smaller" type="button" aria-label="Réduire le texte CCDB">A−</button><button id="kjpbs-larger" type="button" aria-label="Agrandir le texte CCDB">A+</button></div>
+        <p id="kjpbs-result-count" class="kj-result-count"></p><div id="kjpbs-results" class="kj-results"></div>
+      </div>
+      <dialog id="kjpbs-passage" class="kj-dialog" aria-labelledby="kjpbs-passage-title"><div class="kj-dialog-scroll"><header class="kj-dialog-head"><h3 id="kjpbs-passage-title"></h3><button id="kjpbs-close" type="button" aria-label="Fermer le passage CCDB">✕</button></header><div class="kj-toolbar"><button id="kjpbs-copy" type="button">Copier le passage</button><button id="kjpbs-context" type="button">Lire le chapitre</button></div><article id="kjpbs-passage-text" class="kj-text"></article><ol id="kjpbs-ranks" class="kj-ranks"></ol><div id="kjpbs-chapter"></div></div></dialog>
+    </section>
+    <section id="hymns-panel" role="tabpanel" aria-labelledby="hymns-tab" hidden>
+      <div class="hymn-intro"><p class="eyebrow">LE RECUEIL</p><h2>Fihirana FFPM</h2><p id="hymn-total">FFPM · Antema · Tsanta · FF fanampiny</p></div>
+      <form id="hymn-entry">
+        <label for="hymn-query">Retrouver un chant</label>
+        <div class="entry-row">
+          <div class="hymn-search-wrap">
+            <input id="hymn-query" type="search" role="combobox" aria-autocomplete="list" aria-controls="hymn-suggestions" aria-expanded="false" placeholder="N° 123, Tsanta 2, FF 10, titre ou paroles…" maxlength="240" autocomplete="off">
+            <div id="hymn-suggestion-box" class="hymn-suggestion-box" hidden>
+              <ul id="hymn-suggestions" role="listbox" aria-label="Suggestions de chants"></ul>
+              <p id="hymn-suggest-empty" hidden>Aucun chant trouvé. Essayez un autre mot.</p>
+              <button id="hymn-all-results" type="button"></button>
+            </div>
+          </div>
+          <button type="submit" class="primary">Chercher</button>
+        </div>
+        <small>Numéro, titre ou mots des paroles. Suggestions dès la saisie · ↑ ↓ pour choisir, Entrée pour ouvrir.</small>
+      </form>
+      <div id="hymn-collections" class="hymn-collections" role="group" aria-label="Collections de chants">
+        <button type="button" data-collection="all" aria-pressed="true">Tous</button>
+        <button type="button" data-collection="ffpm" aria-pressed="false">FFPM</button>
+        <button type="button" data-collection="antema" aria-pressed="false">Antema</button>
+        <button type="button" data-collection="tsanta" aria-pressed="false">Tsanta</button>
+        <button type="button" data-collection="ff" aria-pressed="false">FF fanampiny</button>
+      </div>
+      <p id="hymn-status" role="status" aria-live="polite"></p>
+      <section id="hymn-results" aria-label="Résultats de chants">
+        <h3 id="hymn-result-count"></h3><div id="hymn-hits"></div>
+        <p id="hymn-no-results" class="hymn-empty" hidden>Aucun chant ne correspond à cette recherche. Essayez un numéro, un mot du titre ou une phrase des paroles.</p>
+        <nav id="hymn-pagination" class="pagination" aria-label="Pages de chants" hidden><button id="hymn-prev-results">← Précédents</button><span id="hymn-page-count"></span><button id="hymn-next-results">Suivants →</button></nav>
+      </section>
+      <section id="hymn-detail" hidden>
+        <div class="hymn-heading"><span id="hymn-number" class="hymn-number"></span><div><p id="hymn-category" class="eyebrow"></p><h2 id="hymn-title" tabindex="-1"></h2></div></div>
+        <div class="hymn-tools"><button id="hymn-back">← Résultats</button><button id="hymn-copy">Copier le chant</button><button id="hymn-open">Ouvrir dans le lecteur</button><div class="hymn-font-tools" role="group" aria-label="Taille des paroles"><button id="hymn-smaller" aria-label="Réduire la taille des paroles">A−</button><button id="hymn-larger" aria-label="Agrandir les paroles">A+</button></div></div>
+        <article id="hymn-lyrics" class="hymn-sheet" aria-label="Paroles du chant"></article>
+        <nav class="hymn-navigation" aria-label="Chants de la collection"><button id="hymn-previous">← Précédent</button><button id="hymn-next">Suivant →</button></nav>
+      </section>
+    </section>
+
+    <section id="interlinear-panel" role="tabpanel" aria-labelledby="interlinear-tab" hidden>
+      <div class="interlinear-hero"><p class="eyebrow">HÉBREU &amp; GREC · MOT À MOT</p><h2>Au plus près<br>du <em>texte.</em></h2><p>La beauté des langues originales.<br>Le sens des mots, leur forme et leur histoire.</p></div>
+      <div class="interlinear-controls">
+        <div class="interlinear-selectors">
+          <label for="interlinear-corpus">Texte original<select id="interlinear-corpus"><option value="hebrew">Hébreu · AT</option><option value="greek">Grec · NT</option></select></label>
+          <label for="interlinear-book">Livre<select id="interlinear-book"></select></label>
+          <label for="interlinear-chapter">Chapitre<select id="interlinear-chapter"></select></label>
+          <label for="interlinear-verse">Verset<select id="interlinear-verse"></select></label>
+        </div>
+        <form id="interlinear-entry"><input id="interlinear-query" type="search" aria-label="Référence interlinéaire" placeholder="Genèse 1:1 · Jean 1:1" autocomplete="off" maxlength="100" required><button type="submit">Lire ↗</button></form>
+      </div>
+      <p id="interlinear-status" role="status" aria-live="polite"></p>
+      <section id="interlinear-view" hidden>
+        <header class="interlinear-reading-head"><div><span id="interlinear-source"></span><h3 id="interlinear-reference"></h3></div><div class="interlinear-size-tools" role="group" aria-label="Taille du texte original"><button id="interlinear-smaller" aria-label="Réduire le texte original">A−</button><button id="interlinear-larger" aria-label="Agrandir le texte original">A+</button></div></header>
+        <div class="interlinear-tools"><button id="interlinear-open">Agrandir ↗</button><button id="interlinear-copy">Copier le verset &amp; l’analyse</button></div>
+        <article class="interlinear-glass"><h4 class="interlinear-block-title">Texte original</h4><p id="interlinear-original" class="interlinear-original"></p></article>
+        <article class="interlinear-glass interlinear-translation"><header><h4 class="interlinear-block-title">Traduction parallèle</h4><select id="interlinear-translation" aria-label="Traduction parallèle"><option value="KJF">KJF · Français</option><option value="1MG1865">1MG1865 · Malagasy</option><option value="KJV">KJV · English</option></select></header><p id="interlinear-translation-text" aria-live="polite"></p></article>
+        <p class="interlinear-alignment-note">Les cartes donnent le sens lexical, sans imposer une traduction mot à mot. La numérotation du texte original peut différer de celle des traductions.</p>
+        <div class="interlinear-analysis-heading"><h4>Les mots à la loupe</h4><span id="interlinear-word-count"></span></div>
+        <div class="interlinear-legend" aria-label="Couleurs grammaticales"><span>Noms &amp; adjectifs</span><span>Verbes</span><span>Pronoms &amp; particules</span><span>Articles &amp; liens</span></div>
+        <p class="interlinear-alignment-note">Cliquez sur un mot ou son numéro Strong pour ouvrir la fiche détaillée.</p>
+        <div id="interlinear-words" class="interlinear-words" aria-label="Analyse des mots dans l’ordre du texte"></div>
+        <nav class="interlinear-navigation" aria-label="Versets du texte original"><button id="interlinear-previous">← Précédent</button><span id="interlinear-progress"></span><button id="interlinear-next">Suivant →</button></nav>
+      </section>
+      <details class="interlinear-sources"><summary>À propos des textes et de la morphologie</summary><p>Ancien Testament hébreu et passages araméens : Open Scriptures Hebrew Bible 2.0, texte WLC. Lemmes et morphologie : CC BY 4.0, attribution au projet Open Scriptures Hebrew Bible. <a href="https://github.com/openscriptures/morphhb" target="_blank" rel="noopener">Consulter la source</a>.</p><p>Nouveau Testament grec accentué : GNT5+, extrait de la base Texte original 2+ de Baibolintsika. Les lacunes de la source sont conservées.</p><p>Les codes développés en français proviennent des décodeurs morphologiques de Baibolintsika. Dictionnaire : Concordance Strong Française. Polices : Noto Serif Hebrew et Cardo, SIL Open Font License.</p></details>
+    </section>
+    <section id="pericope-panel" role="tabpanel" aria-labelledby="pericope-tab" hidden>
+      <div class="module-intro"><p class="eyebrow">LE PROCHAIN RENDEZ-VOUS</p><h2>Péricope universelle</h2><p>Le prochain dimanche ou jour de fête, sa prière et ses lectures selon le recueil universel.</p></div>
+      <div class="calendar-toolbar"><button id="pericope-previous" aria-label="Événement précédent">←</button><button id="pericope-upcoming" class="primary">Prochain événement</button><button id="pericope-next" aria-label="Événement suivant">→</button></div>
+      <p id="pericope-status" class="calendar-status" role="status" aria-live="polite"></p>
+      <article id="pericope-card" class="pericope-card" hidden>
+        <p id="pericope-date" class="pericope-date"></p>
+        <div class="pericope-meta"><span id="pericope-color" class="liturgical-badge"></span><span id="pericope-number"></span></div>
+        <h3 id="pericope-title"></h3><p id="pericope-subtitle" class="pericope-subtitle" hidden></p>
+        <section class="pericope-collect" aria-labelledby="pericope-collect-title">
+          <header><h4 id="pericope-collect-title">Vavaka Kolekta</h4><div class="collect-font-tools" role="group" aria-label="Taille de la prière"><button id="pericope-collect-smaller" type="button" aria-label="Réduire la taille de la prière">A−</button><span id="pericope-collect-size" aria-live="polite">18</span><button id="pericope-collect-larger" type="button" aria-label="Agrandir la taille de la prière">A+</button></div></header>
+          <div id="pericope-collect-text" class="pericope-collect-text"></div>
+        </section>
+        <h4 class="pericope-readings-title">Vakiteny · Lectures</h4><div id="pericope-readings" class="pericope-readings"></div>
+      </article>
+      <p class="calendar-caption">Cliquez une référence soulignée pour ouvrir le passage ici. Table universelle de 68 péricopes, prières et lectures des cycles I, II et III · calcul hors ligne.</p>
+    </section>
+    <section id="dss-panel" role="tabpanel" aria-labelledby="dss-tab" hidden>
+      <div class="module-intro"><p class="eyebrow">LE TEMPS &amp; LES FÊTES</p><h2>Calendrier DSS</h2><p>Le calendrier du jour et ses fêtes, selon DSSCalendar Clone.</p></div>
+      <div class="calendar-toolbar"><div class="segmented" role="group" aria-label="Vue du calendrier"><button data-dss-view="day" aria-pressed="true">Jour</button><button data-dss-view="month" aria-pressed="false">Mois</button><button data-dss-view="year" aria-pressed="false">Année</button></div><button id="dss-today">Aujourd’hui</button></div>
+      <p id="dss-status" class="calendar-status" role="status" aria-live="polite"></p>
+      <div id="dss-day-view"><article id="dss-today-card" class="dss-today-card"><p class="eyebrow">DATE DES MANUSCRITS DE LA MER MORTE</p><h3 id="dss-date" class="dss-date-main"></h3><p id="dss-am" class="dss-am"></p><div id="dss-special-events" class="special-events" aria-label="Jours spéciaux"></div><dl><div class="dss-date-row"><dt>Date civile</dt><dd id="dss-gregorian"></dd></div><div class="dss-date-row"><dt>Jour &amp; heure de Jérusalem</dt><dd id="dss-time"></dd></div><div class="dss-date-row"><dt>Date hébraïque / pharisienne</dt><dd id="dss-hebrew"></dd></div></dl></article></div>
+      <div id="dss-month-view" hidden><div class="calendar-toolbar"><button id="dss-month-previous" aria-label="Mois précédent">←</button><button id="dss-current-month">Mois courant</button><button id="dss-month-next" aria-label="Mois suivant">→</button></div><div id="dss-month-content"></div></div>
+      <div id="dss-year-view" hidden><form id="dss-year-form" class="year-entry"><label for="dss-year-input">Année de départ<input id="dss-year-input" type="number" min="1" max="2100" required inputmode="numeric"></label><label for="dss-era">Ère<select id="dss-era"><option value="AD">AD · après J.-C.</option><option value="BC">BC · avant J.-C.</option></select></label><button class="primary" type="submit">Afficher</button></form><p id="dss-year-summary" class="year-summary"></p><div id="dss-year-content" class="dss-year-grid"></div></div>
+      <p class="calendar-legend"><span>▰ Fête</span><span>□ Shabbat</span><span>● Aujourd’hui</span> Cliquez un jour pour voir les détails.</p>
+      <p class="calendar-caption">Jour civil et heure de Jérusalem · 364 jours, avec semaine intercalaire lorsque prévue. Années 1–2100 AD et 1–3925 BC, sans année civile zéro. Les dates anciennes suivent le modèle DSSCalendar Clone de Baibolintsika.</p>
+    </section>
+    <section id="definition-panel" role="tabpanel" aria-labelledby="definition-tab" hidden></section>
+  <section id="reading-daily-panel" aria-labelledby="reading-daily-tab" hidden>
+  <div class="plan-head"><h2>Parole du jour</h2><button id="reading-daily-window">Ouvrir dans le lecteur</button></div>
+  <div class="plan-head">
+    <button id="reading-daily-previous" aria-label="Jour précédent">←</button>
+    <input id="reading-daily-date" type="date" aria-label="Date">
+    <button id="reading-daily-next" aria-label="Jour suivant">→</button>
+    <button id="reading-daily-today">Aujourd’hui</button>
+    <select id="reading-daily-edition" aria-label="Édition biblique"><option value="mdg">MDG · Malagasy</option><option value="kjf">KJF · Nadine L. Stratford</option><option value="kjv">KJV · English</option></select>
+  </div>
+  <article class="reading-reading-card">
+    <h3 id="reading-daily-reference"></h3>
+    <blockquote id="reading-daily-text"></blockquote>
+    <div class="plan-head"><button id="reading-daily-open">Lire le chapitre ↗</button><button id="reading-daily-copy">Copier</button></div>
+  </article>
+  <p id="reading-daily-status" role="status"></p>
+</section>
+<section id="reading-teny-panel" aria-labelledby="reading-teny-tab" hidden>
+  <div class="plan-head"><h2>Teny Fiainana</h2><button id="reading-teny-window">Ouvrir dans le lecteur</button></div>
+  <div class="plan-head">
+    <button id="reading-teny-previous" aria-label="Jour précédent">←</button>
+    <input id="reading-teny-date" type="date" aria-label="Date">
+    <button id="reading-teny-next" aria-label="Jour suivant">→</button>
+    <button id="reading-teny-today">Aujourd’hui</button>
+  </div>
+  <div class="plan-head">
+    <button id="reading-teny-choose">Choisir le dossier MP3…</button>
+    <button id="reading-teny-import">Importer la bibliothèque Swift…</button>
+    <input id="reading-teny-folder" type="file" webkitdirectory hidden>
+    <input id="reading-teny-file" type="file" accept=".json,application/json" hidden>
+  </div>
+  <p id="reading-teny-location"></p>
+  <article class="reading-reading-card">
+    <h3 id="reading-teny-reference"></h3>
+    <blockquote id="reading-teny-text"></blockquote>
+    <audio id="reading-teny-audio" controls preload="none" hidden></audio>
+    <div class="plan-head"><button id="reading-teny-open">Lire le passage ↗</button><button id="reading-teny-copy">Copier</button><button id="reading-teny-favorite" aria-pressed="false">Favori</button></div>
+  </article>
+  <div class="plan-head"><input id="reading-teny-search" type="search" placeholder="Numéro, titre ou référence" aria-label="Chercher un passage"><button id="reading-teny-favorites" aria-pressed="false">Favoris</button></div>
+  <p id="reading-teny-count"></p>
+  <div id="reading-teny-results" class="reading-reading-results"></div>
+  <div class="plan-head"><button id="reading-teny-prev-page">← Précédents</button><button id="reading-teny-next-page">Suivants →</button></div>
+  <p id="reading-teny-status" role="status"></p>
+</section>
+
+<section id="plan90-panel" aria-labelledby="plan90-tab" hidden>
+  <div class="plan-head">
+    <h2>Bible en 90 jours</h2>
+    <button id="plan90-window" type="button" hidden>Ouvrir dans le lecteur</button>
+    <label>Édition <select id="plan90-edition" disabled><option value="mdg">MDG · Malagasy</option><option value="kjf">KJF · Nadine L. Stratford</option><option value="kjv">KJV · English</option><option value="hebrew">HEBREW · Hébreu (AT et NT)</option></select></label>
+    <button id="plan90-start" type="button" disabled class="primary">Commencer maintenant</button>
+  </div>
+  <p id="plan90-status" role="status"></p>
+  <div id="plan90-active" hidden>
+    <div class="plan-head">
+      <button id="plan90-today" type="button">Lecture en cours</button>
+      <button id="plan90-calendar" type="button">Calendrier</button>
+      <button id="plan90-stats" type="button">Statistiques</button>
+      <button id="plan90-paper" type="button">Plan PDF</button>
+      <button id="plan90-settings" type="button">Réglages</button>
+    </div>
+    <p id="plan90-summary"></p>
+    <progress id="plan90-progress" max="90" aria-label="Jours lus"></progress>
+    <p id="plan90-late" hidden></p>
+    <div class="plan-head" id="plan90-finished" hidden>
+      <strong>Plan terminé · 90 jours</strong><button id="plan90-certificate" type="button">Certificat PDF</button>
+    </div>
+    <article id="plan90-card">
+      <h3 id="plan90-range"></h3>
+      <div class="plan-head">
+        <button id="plan90-prev" aria-label="Jour précédent">←</button><button id="plan90-next" aria-label="Jour suivant">→</button>
+        <button id="plan90-less" aria-label="Réduire le texte">A−</button><button id="plan90-more" aria-label="Agrandir le texte">A+</button>
+        <button id="plan90-listen">Écouter</button><button id="plan90-pause-audio">Pause audio</button><button id="plan90-stop">Stop</button>
+      </div>
+      <div id="plan90-verses"></div>
+      <div class="plan-head"><button id="plan90-complete" type="button" class="primary">Marquer comme lu</button></div>
+    </article>
+    <div class="plan-head plan-actions">
+      <button id="plan90-share" type="button">Partager ma progression</button>
+      <button id="plan90-restore" type="button">Restaurer les jours 1 à N</button>
+      <button id="plan90-streak" type="button">Modifier mon streak</button>
+      <button id="plan90-catchup" type="button">Rattrapage</button>
+      <button id="plan90-pause" type="button">Mettre en pause</button>
+      <button id="plan90-reset" type="button">Recommencer</button>
+    </div>
+  </div>
+  <dialog id="plan90-dialog" class="plan-dialog">
+    <header><h3 id="plan90-dialog-title"></h3><button id="plan90-dialog-close" aria-label="Fermer">×</button></header>
+    <div id="plan90-dialog-content"></div>
+    <p id="plan90-dialog-error" role="status"></p>
+  </dialog>
+</section>
+
+
+  </main><footer class="app-footer">KJV · KJF · 1MG1865 · Interlinéaire · Hymnes · Péricope · DSS<br>Modules bibliques hors ligne · Sources Définition en ligne ou locales.<br><span>Dans Chrome, autorisez l’extension sur les sites pour y activer les références.</span></footer>
+  </div>
+
+  <dialog id="interlinear-strong" class="strong-dialog" aria-labelledby="strong-code strong-lemma">
+    <div id="strong-dialog-scroll" class="strong-dialog-scroll" tabindex="0" aria-label="Fiche Strong et analyse morphologique">
+      <header class="strong-dialog-bar"><div><button id="strong-back" hidden aria-label="Revenir à la fiche Strong précédente">←</button><span id="strong-code"></span></div><button id="strong-close" aria-label="Fermer la fiche Strong">×</button></header>
+      <div class="strong-content"><div class="strong-identity"><h3 id="strong-lemma"></h3><p id="strong-transliteration"></p><p id="strong-meaning"></p><p id="strong-pronunciation"></p></div>
+      <section id="strong-context" class="strong-context"><h4 class="interlinear-block-title">La forme dans ce verset</h4><div id="strong-context-form"></div><p id="strong-context-morph"></p><code id="strong-context-code"></code><p id="strong-context-features"></p></section>
+      <div id="strong-definition" class="strong-definition" aria-live="polite"></div><p class="strong-footnote">Le sens lexical et la translittération décrivent l’entrée du dictionnaire. L’analyse morphologique décrit la forme effectivement lue dans le verset.</p></div>
+    </div>
+  </dialog>
+  <dialog id="calendar-passage" class="passage-dialog" aria-labelledby="calendar-passage-title"><header><h3 id="calendar-passage-title"></h3><button id="calendar-passage-close" aria-label="Fermer le passage">×</button></header><div id="calendar-passage-body" aria-live="polite"></div><footer><select id="calendar-bible" aria-label="Bible du passage"><option value="1MG1865">1MG1865 · Malagasy</option><option value="KJV">KJV · English</option><option value="KJF">KJF · Français</option></select><button id="calendar-passage-open">Lire le chapitre ↗</button></footer></dialog>
+</body></html>

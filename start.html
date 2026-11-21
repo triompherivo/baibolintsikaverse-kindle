@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BaibolintsikaVerse pour liseuses</title>
+<style>
+body{margin:0;color:#111;background:#fff;font:17px/1.6 sans-serif}
+main{max-width:34em;margin:8vh auto;padding:0 1.1em}
+h1{font:700 2em Georgia,serif;margin-bottom:.4em}
+a{display:block;padding:.7em 0;color:#111}
+strong{display:block;border-bottom:2px solid #111;padding-bottom:.5em}
+</style>
+</head>
+<body><main>
+<h1>BaibolintsikaVerse</h1>
+<strong>Pour Kindle Scribe et autres liseuses</strong>
+<a id="full" href="verse/reader.html">Ouvrir la version complète</a>
+<a id="lite" href="lite/index.html">Ouvrir le lecteur pour navigateurs anciens</a>
+<a id="scriptures" href="bible.html">Ouvrir l’adaptation de Scriptures</a>
+<noscript><p>Activez JavaScript pour rechercher et lire les chapitres.</p></noscript>
+</main>
+<script>
+(function () {
+  var scriptures = /(?:^|[?&])scriptures=1(?:&|$)/.test(location.search);
+  var eligible = false;
+  try {
+    eligible = !!(window.Promise && window.fetch && window.Worker && window.indexedDB &&
+      window.globalThis && window.TextDecoder && String.prototype.matchAll &&
+      new RegExp('(?<!x)\\p{L}', 'u').test('J'));
+  } catch (error) {}
+  var full = document.getElementById('full'), lite = document.getElementById('lite');
+  if (scriptures) {
+    full.href += '?scriptures=1';
+    lite.href += '?scriptures=1';
+    location.replace((eligible ? full : lite).href);
+  }
+})();
+</script>
+</body>
+</html>

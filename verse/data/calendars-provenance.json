@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "path": "Baibolintsika/Baibolintsika/DSSCalendarClone/DSSCalendarCloneEngine.swift",
+      "sha256": "7c6836ac73d473b0b6f7a4d1d8db328bc88eabdfbeee8c5934253c36b1af2357"
+    },
+    {
+      "path": "Baibolintsika/Baibolintsika/PerikopaFLM/PerikopaFLMEngine.swift",
+      "sha256": "a90f366d1784082275f3bc5203e61f858446ffb7406d04164fe726c4ee5d583a"
+    },
+    {
+      "path": "Baibolintsika/Baibolintsika/PerikopaFLM/PerikopaFLMModels.swift",
+      "sha256": "5465c2d92b5dd2dd6816a580219def7ce499156da646dddf70e8927bb2ef13cd"
+    },
+    {
+      "path": "Baibolintsika/Baibolintsika/PerikopaFLM/perikopa_decrypted.txt",
+      "sha256": "ac22fd8a0f8aeb11ac92344bbb9eec4cde6b9947ca7250fc28de2d12855912dc"
+    }
+  ],
+  "scope": "DSSCalendar Clone year starts and feast rules; complete 68-row universal Perikopa FLM table with collects and seven reading roles. Pericope dates are calculated at runtime, not exported for a fixed year range. Native parity fixtures cover all rows/cycles and calendar boundaries. No mobile sources modified.",
+  "sha256": "aa22a097f6479a14a50fc4ad8ad6e221a9f4f54631a5df680101e45bde8f46a4"
+}

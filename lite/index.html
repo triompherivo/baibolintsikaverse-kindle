@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BaibolintsikaVerse · Lecteur léger</title>
+<style>
+body{margin:0 auto;max-width:47em;padding:1em;background:#fff;color:#111;font:16px/1.6 Arial,sans-serif}
+h1,h2,#verses p{font-family:Georgia,serif}h1{border-bottom:2px solid #111;padding-bottom:.3em;margin:0}
+a{color:#111}p{margin:.55em 0}label{display:inline-block;margin:.35em .5em .35em 0}label span{display:block;font-weight:bold}
+button,input,select{padding:.6em .35em;border:1px solid #777;font:inherit;color:#111;background:#fff;max-width:100%}
+#nav{margin:.8em 0}#verses p{margin:.6em 0;font-size:1.23em}sup{margin-right:.5em;font:600 .68em Arial,sans-serif}
+#results button{display:block;width:100%;text-align:left;margin:.4em 0}#foot a{display:inline-block;margin-right:.6em}
+</style>
+</head>
+<body>
+<h1>BaibolintsikaVerse</h1>
+<p>Lecteur pour navigateurs anciens</p>
+<label><span>Bible</span><select id="version"><option value="1MG1865">1MG1865 · Malagasy</option><option value="KJF">KJF · Français</option><option value="KJV">KJV · English</option></select></label>
+<label><span>Livre</span><select id="book"></select></label>
+<label><span>Chapitre</span><select id="chapter"></select></label>
+<div id="nav"><button type="button" id="previous">Chapitre précédent</button> <button type="button" id="next">Chapitre suivant</button></div>
+<form id="search"><label for="query">Mot ou expression dans cette Bible</label>
+<input type="text" id="query" maxlength="160">
+<button type="submit">Chercher</button></form>
+<p id="status" role="status">Chargement de la Bible…</p>
+<h2 id="title"></h2><article id="verses"></article><section id="results" style="display:none"><div id="hits"></div>
+<button type="button" id="previous-page">Page précédente</button> <button type="button" id="next-page">Page suivante</button></section>
+<p id="foot"><a href="../verse/reader.html">Version complète</a> <a href="../index.html">Accueil</a></p>
+<script src="lite.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+:root {
+  color-scheme: light;
+  font-size: 16px;
+  --bg: #fff;
+  --card: #fff;
+  --ink: #141414;
+  --muted: #424242;
+  --line: #aaa;
+  --accent: #111;
+  --soft: #eee;
+  --selected: #e6e6e6;
+  --gold: #454545;
+}
+
+html, body { height: auto; overflow: visible; }
+.reader-scroll { height: auto; max-height: none; overflow: visible; }
+.kindle-header {
+  background: #fff;
+  border-bottom: 2px solid #1b1b1b;
+  justify-content: space-between;
+  padding: 16px max(14px, calc((100vw - 960px) / 2));
+}
+.kindle-header h1 { font: bold 1.42rem/1.1 Georgia, serif; letter-spacing: -.025em; }
+.kindle-header a { font-size: .9rem; color: #111; padding: 10px 0 10px 10px; }
+body main { max-width: 990px; padding: 16px 14px 28px; }
+#library-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 5px;
+  margin: 0 0 12px;
+}
+#library-tabs button {
+  grid-column: auto;
+  min-height: 44px;
+  color: #111;
+  border: 1px solid #777;
+  background: #fff;
+  padding: 6px;
+  font-size: .91rem;
+}
+#library-tabs button[aria-selected="true"] { background: #151515; border-color: #151515; color: #fff; }
+button, input:not([type=checkbox]):not([type=radio]), select { min-height: 44px; }
+button, label, .kj-criterion-options label, .kj-options > label, .kj-display > label { font-size: .9rem; }
+input[type=checkbox], input[type=radio] { width: 18px; height: 18px; }
+button.primary { color: #fff; }
+button:focus, input:focus, select:focus, a:focus { outline-offset: 2px; }
+.navigation, .settings, .entry-row { flex-wrap: wrap; }
+.kindle-tools { padding: 10px 0; border-bottom: 1px solid #aaa; margin-bottom: 18px; }
+.kindle-tools summary { cursor: pointer; padding: 6px 0; font-weight: bold; }
+.kindle-tools label { display: block; margin: 8px 0; }
+#kindle-text { width: 100%; padding: 8px; font: inherit; margin-bottom: 6px; }
+#kindle-matches a { display: inline-block; color: #111; padding: 12px 10px; }
+.verse { font-size: 1.23rem; line-height: 1.65; }
+.verse.selected { border-left: 3px solid #222; }
+.hit mark, .verse mark, .kj-text mark { background: #dedede; color: #111; }
+.kj-text mark { text-decoration: underline; }
+#kjpbs-panel, .kj-dialog {
+  --kj-ink: #171717;
+  --kj-accent: #171717;
+  --kj-soft: #eee;
+  --kj-line: #aaa;
+  --kj-card: #fff;
+  --kj-muted: #444;
+  --kj-red: #921a29;
+}
+#kjpbs-panel .primary { background: #161616; color: #fff; }
+.kj-seven { text-decoration: underline; text-decoration-style: double; }
+.kj-hero, .interlinear-hero, .hymn-intro { background: #f5f5f5; color: #111; box-shadow: none; }
+.kj-hero h2, .interlinear-hero h2, .hymn-intro h2 { color: #111; }
+.kj-dialog { box-shadow: none; }
+.kj-dialog::backdrop { background: #0007; backdrop-filter: none; }
+#frequencies { overflow-x: auto; }
+#frequencies button { min-height: 4px; }
+@media (max-width: 500px) {
+  #library-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kj-stats { grid-template-columns: repeat(2, 1fr); }
+}

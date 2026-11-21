@@ -1,0 +1,5 @@
+Ancien Testament : corpus hébreu massorétique (HEB), numérotation hébraïque.
+Nouveau Testament : Isaac Salkinson et Christian D. Ginsburg, édition de 1886, domaine public, transcription eBible.org.
+https://ebible.org/details.php?id=hebsg
+https://ebible.org/Scriptures/hebsg_usfm.zip
+SHA-256 USFM : 71f137fd188b81b12e1379e52389bb4ab32efee6deb863a0ebad35102c535986
