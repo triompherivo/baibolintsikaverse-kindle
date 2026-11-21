@@ -835,50 +835,6 @@
     window.clearServiceWorkerCache = clearServiceWorkerCache;
 
     // --- SERVICE WORKER REGISTRATION & AUTO-RELOAD ---
-    // `?theme=` is the screenshot/support preview. Skip the SW there: a fresh
-    // registration calls clients.claim() -> controllerchange -> reload, which
-    // can interrupt a capture and leave filtered canvas/grid layers unpainted.
-    var previewMode = false;
-    try {
-        previewMode = /[?&]theme=/.test(window.location.search) || !!sessionStorage.getItem(PREVIEW_KEY);
-    } catch (e) {}
-    if ('serviceWorker' in navigator) {
-        if (previewMode) {
-            if (navigator.serviceWorker.getRegistrations) {
-                navigator.serviceWorker.getRegistrations().then(function (regs) {
-                    for (var i = 0; i < regs.length; i++) regs[i].unregister();
-                }).catch(function () {});
-            }
-        } else {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(function (registration) {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(function (err) {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
-            });
-
-            // Forced Update Logic: Reload when a new service worker takes control.
-            // Never reload while a sign-in/registration is in flight: the reload
-            // aborts the auth request and the user comes back in Guest Mode
-            // (the "it reloads right after I tap Log In" reports, 2026-09/10).
-            // Skipping costs nothing — the new worker controls the next navigation.
-            var refreshing = false;
-            navigator.serviceWorker.addEventListener('controllerchange', function () {
-                if (refreshing) return;
-                if (window.__rkAuthBusy) {
-                    console.log('Service Worker: controller changed during sign-in; not reloading.');
-                    return;
-                }
-                refreshing = true;
-                console.log('Service Worker: Controller changed. Reloading page...');
-                window.location.reload();
-            });
-        }
-    }
-
     // --- VIEWPORT LOCKDOWN (Kindle/E-ink) ---
     // Prevent pinch-zoom and double-tap zoom specifically for E-ink browsers that ignore meta tags
     document.addEventListener('touchstart', function (event) {

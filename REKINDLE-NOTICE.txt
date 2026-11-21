@@ -1,4 +1,5 @@
 ReKindle par Ukiyo, https://github.com/ReKindleOS/ReKindle
 Licence CC BY-NC-SA 4.0, voir licenses/ReKindle-CC-BY-NC-SA-4.0.md.
 Révision du mode autonome 9d8950b665db46dbb75c56e5ffb58c20c033ddd3
-Modification locale de Scriptures pour ajouter un lien vers le lecteur indépendant Verse.
+Adaptation locale de Scriptures pour accéder au lecteur Verse.
+Dans la copie autonome, le service worker du tableau de bord est omis.

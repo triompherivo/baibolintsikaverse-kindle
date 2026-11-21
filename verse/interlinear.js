@@ -267,6 +267,7 @@
       var _a;
       const ref = BV.parse($("interlinear-query").value);
       if (!ref) throw Error("Saisissez une r\xE9f\xE9rence, par exemple Gen\xE8se 1:1 ou Jean 1:1.");
+      await prepare();
       const language = ref.book <= 39 ? "hebrew" : "greek", data = (_a = catalog.corpora[language].books[ref.book]) == null ? void 0 : _a[ref.chapter];
       const v = ref.wholeChapter ? data == null ? void 0 : data[0] : ref.parts[0].from;
       if (!(data == null ? void 0 : data.includes(v))) throw Error("Cette r\xE9f\xE9rence est absente de l\u2019\xE9dition originale.");
