@@ -7,7 +7,7 @@ Ouvrez [la version complète](https://triompherivo.github.io/baibolintsikaverse-
 
 ## Contenu
 
-La version complète propose la Bible malgache 1865, KJV et KJF de Nadine L. Stratford. Elle comprend la recherche booléenne, les renvois TSK, le lecteur de chapitres avec comparaison, KJV CCDB et ses fichiers KJS, l’interlinéaire hébreu/grec et Strong, les hymnes FFPM, Péricope et les prières de collecte, le calendrier DSS, la Parole du jour, Teny Fiainana, Bible en 90 jours et l’atelier Définition. Celui-ci inclut les bibliothèques PDF et EPUB, les notes, les dictionnaires, l’OCR et les intégrations configurables.
+La version complète propose la Bible malgache 1865, KJV et KJF de Nadine L. Stratford. Elle comprend la recherche booléenne, les renvois TSK, le partage de liens Bible et Péricope, le lecteur de chapitres avec comparaison, KJV CCDB et ses fichiers KJS, l’interlinéaire hébreu/grec et Strong, les hymnes FFPM, Péricope et les prières de collecte, le calendrier DSS, la Parole du jour, Teny Fiainana, Bible en 90 jours et l’atelier Définition. Celui-ci inclut les bibliothèques PDF et EPUB, les notes, les dictionnaires, l’OCR et les intégrations configurables.
 
 Les préférences et livres importés sont enregistrés dans le navigateur de chaque liseuse. Les sources en ligne, dictionnaires distants et services IA restent soumis aux capacités du navigateur et aux conditions d’accès du service. Le plan et Teny Fiainana acceptent des MP3 sélectionnés par le lecteur lorsque la liseuse prend en charge ce choix.
 

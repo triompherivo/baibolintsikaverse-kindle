@@ -2557,7 +2557,7 @@ var Tesseract = (() => {
   var require_spawnWorker = __commonJS({
     "node_modules/tesseract.js/src/worker/browser/spawnWorker.js"(exports, module) {
       init_ocr_buffer();
-      module.exports = () => new Worker(chrome.runtime.getURL("vendor/tesseract/worker.js"));
+      module.exports = () => new Worker(browser.runtime.getURL("vendor/tesseract/worker.js"));
     }
   });
 

@@ -75,3 +75,8 @@ button:focus, input:focus, select:focus, a:focus { outline-offset: 2px; }
   #library-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kj-stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+#web-share-dialog { width: min(550px, 94vw); border: 2px solid #222; padding: 14px; }
+#web-share-dialog label { display: block; margin-bottom: 10px; }
+#web-share-url { width: 100%; }
+#web-share-dialog form { display: inline; }

@@ -32,7 +32,7 @@
     <button id="chapter-auto" type="button">Auto</button>
   </div>
 </div>
-    <section id="reading"><div class="reading-header"><div><p class="eyebrow" id="edition">BAIBOLY MALAGASY 1865</p><h2 id="reference"></h2></div><button id="open" title="Ouvrir en mode lecture">Fenêtre de lecture ↗</button></div><div class="reading-tools"><button id="copy">Copier le passage</button><label><input id="crossrefs" type="checkbox"> Renvois TSK (KJV)</label></div><p class="numbering" id="numbering" hidden>Les renvois TSK ouvrent la KJV ; la numérotation peut différer dans la 1MG1865.</p><div id="chapter-headings" class="chapter-headings" hidden></div><article id="verses"></article></section>
+    <section id="reading"><div class="reading-header"><div><p class="eyebrow" id="edition">BAIBOLY MALAGASY 1865</p><h2 id="reference"></h2></div><button id="open" title="Ouvrir en mode lecture">Fenêtre de lecture ↗</button></div><div class="reading-tools"><button id="copy">Copier le passage</button><button id="web-share-passage" type="button">Partager le passage</button><label><input id="crossrefs" type="checkbox"> Renvois TSK (KJV)</label></div><p class="numbering" id="numbering" hidden>Les renvois TSK ouvrent la KJV ; la numérotation peut différer dans la 1MG1865.</p><div id="chapter-headings" class="chapter-headings" hidden></div><article id="verses"></article></section>
     <section id="search-results" hidden><div class="reading-header"><h2 id="result-title">Recherche</h2><button id="back">← Lecture</button></div><div id="frequencies" aria-label="Versets trouvés par livre"></div><div class="result-filter"><label>Résultats dans <select id="filter"><option value="0">Tous les livres</option></select></label></div><div id="hits"></div><div class="pagination"><button id="prev-results">← Précédents</button><span id="page-count"></span><button id="next-results">Suivants →</button></div></section>
     </section>
     <section id="kjpbs-panel" role="tabpanel" aria-labelledby="kjpbs-tab" hidden>
@@ -121,7 +121,7 @@
     </section>
     <section id="pericope-panel" role="tabpanel" aria-labelledby="pericope-tab" hidden>
       <div class="module-intro"><p class="eyebrow">LE PROCHAIN RENDEZ-VOUS</p><h2>Péricope universelle</h2><p>Le prochain dimanche ou jour de fête, sa prière et ses lectures selon le recueil universel.</p></div>
-      <div class="calendar-toolbar"><button id="pericope-previous" aria-label="Événement précédent">←</button><button id="pericope-upcoming" class="primary">Prochain événement</button><button id="pericope-next" aria-label="Événement suivant">→</button></div>
+      <div class="calendar-toolbar"><button id="pericope-previous" aria-label="Événement précédent">←</button><button id="pericope-upcoming" class="primary">Prochain événement</button><button id="web-share-pericope" type="button">Partager la Péricope</button><button id="pericope-next" aria-label="Événement suivant">→</button></div>
       <p id="pericope-status" class="calendar-status" role="status" aria-live="polite"></p>
       <article id="pericope-card" class="pericope-card" hidden>
         <p id="pericope-date" class="pericope-date"></p>
@@ -239,7 +239,7 @@
 </section>
 
 
-  </main><footer class="app-footer">KJV · KJF · 1MG1865 · Interlinéaire · Hymnes · Péricope · DSS<br>Modules bibliques hors ligne · Sources Définition en ligne ou locales.<br><span>Dans Chrome, autorisez l’extension sur les sites pour y activer les références.</span></footer>
+  <dialog id="web-share-dialog" aria-labelledby="web-share-title"><h2 id="web-share-title">Lien de lecture</h2><label>Lien <input id="web-share-url" type="url" readonly></label><button id="web-share-copy" type="button">Copier le lien</button><form method="dialog"><button>Fermer</button></form><p id="web-share-status" role="status"></p></dialog></main><footer class="app-footer">KJV · KJF · 1MG1865 · Interlinéaire · Hymnes · Péricope · DSS<br>Modules bibliques hors ligne · Sources Définition en ligne ou locales.<br><span>Dans Chrome, autorisez l’extension sur les sites pour y activer les références.</span></footer>
   </div>
 
   <dialog id="interlinear-strong" class="strong-dialog" aria-labelledby="strong-code strong-lemma">

@@ -80,6 +80,7 @@
     }));
     $("pericope-previous").disabled = !engine.adjacent(event.ordinal, -1);
     $("pericope-next").disabled = !engine.adjacent(event.ordinal, 1);
+    $("pericope-card").dataset.day = event.ordinal;
     $("pericope-card").hidden = false;
     lastPericopeDay = C.localDay();
   }
@@ -276,7 +277,19 @@
     $("pericope-collect-larger").disabled = collectFont === 28;
   };
   document.addEventListener("bv-module", (e) => {
-    if (e.detail === "pericope") run("pericope", renderPericope)();
+    if (e.detail === "pericope") run("pericope", () => {
+      if (!event) {
+        const date = new URLSearchParams(location.search).get("pericope");
+        if (date && /^-?\d{1,7}$/.test(date)) {
+          const day = Number(date), year = C.civilParts(day).year;
+          if (year >= 1583 && year <= 9999) {
+            event = engine.celebration(day);
+            followUpcoming = false;
+          }
+        }
+      }
+      renderPericope();
+    })();
     if (e.detail === "dss") run("dss", () => {
       initDSS();
       refreshDSS();

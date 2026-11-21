@@ -45,6 +45,38 @@
     if (tools.open && !tool.value && remembered) tool.value = remembered;
     delete $("kindle-definition").dataset.selection;
   });
+  if ($("web-share-passage")) {
+    const dialog = $("web-share-dialog");
+    const field = $("web-share-url");
+    const shareStatus = $("web-share-status");
+    const showLink = (options) => {
+      const url = new URL("reader.html", location.href);
+      for (const [key, value] of Object.entries(options)) url.searchParams.set(key, value);
+      field.value = url.href;
+      shareStatus.textContent = "";
+      dialog.showModal();
+    };
+    $("web-share-passage").onclick = async () => {
+      const { lastPassage: ref } = await BVSettings.get({ lastPassage: null });
+      if (BV.valid(ref)) showLink({ selection: JSON.stringify(ref), version: $("version").value });
+    };
+    $("web-share-pericope").onclick = () => {
+      const day = $("pericope-card").dataset.day;
+      if (day) showLink({ pericope: day, version: $("version").value });
+    };
+    $("web-share-copy").onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(field.value);
+        shareStatus.textContent = "Lien copi\xE9.";
+      } catch {
+        field.select();
+        shareStatus.textContent = "S\xE9lectionnez et copiez le lien.";
+      }
+    };
+    if (new URLSearchParams(location.search).has("pericope")) {
+      document.addEventListener("DOMContentLoaded", () => BVLibrary.select("pericope"), { once: true });
+    }
+  }
   const reveal = $("personal-teny-reveal");
   if (reveal) reveal.hidden = true;
 })();
